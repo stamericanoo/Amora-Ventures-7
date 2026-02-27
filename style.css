@@ -1,0 +1,52 @@
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#1b1f3b,#4b0f29);
+    color:white;
+}
+
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-weight:bold;
+    font-size:24px;
+}
+
+.nav-links a {
+    margin-left:20px;
+    color:white;
+    text-decoration:none;
+}
+
+.hero {
+    text-align:center;
+    padding:120px 20px;
+}
+
+.section {
+    padding:100px 80px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:15px;
+    backdrop-filter: blur(8px);
+}
+
+canvas {
+    margin-top:40px;
+}
+
+footer {
+    text-align:center;
+    padding:40px;
+    background:black;
+}
