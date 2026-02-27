@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amora Ventures | Sulfuric Acid Plant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+--maroon:#6b0f1a;
+--navy:#0b1c2d;
+--soft:#f6f6f6;
+--white:#ffffff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background:linear-gradient(180deg,var(--navy),#081420);
+color:white;
+scroll-behavior:smooth;
+}
+
+section{
+padding:120px 10%;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+h1,h2,h3{
+margin-bottom:20px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+background:linear-gradient(120deg,var(--maroon),var(--navy));
+}
+
+.hero h1{
+font-size:64px;
+font-weight:800;
+}
+
+.hero h2{
+font-size:28px;
+font-weight:300;
+opacity:0.9;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:12px;
+margin-bottom:30px;
+backdrop-filter:blur(10px);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.big-number{
+font-size:42px;
+font-weight:700;
+color:#ffb3c1;
+}
+
+canvas{
+background:white;
+padding:20px;
+border-radius:12px;
+}
+
+footer{
+padding:60px 10%;
+background:black;
+text-align:center;
+}
+
+.team{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.member{
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:10px;
+width:200px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<h1>Amora Ventures</h1>
+<h2>Sulfuric Acid Plant – 1000 TPD Industrial Design</h2>
+</div>
+</section>
+
+<!-- OVERVIEW -->
+<section>
+<div class="container">
+<h2>Project Overview</h2>
+<div class="card">
+<p>This project presents a complete industrial design simulation of a 1000 tons/day Sulfuric Acid plant using the Contact Process. The design includes detailed chemical reactions, operating conditions, equipment cost estimation, economic feasibility, and sensitivity analysis.</p>
+</div>
+<div class="grid">
+<div class="card">
+<h3>Plant Capacity</h3>
+<div class="big-number">1000 Ton/Day</div>
+</div>
+<div class="card">
+<h3>Annual Production</h3>
+<div class="big-number">330,000 Ton/Year</div>
+</div>
+<div class="card">
+<h3>Total Capital Investment</h3>
+<div class="big-number">Rp 1.127 T</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section>
+<div class="container">
+<h2>Detailed Process Description</h2>
+
+<div class="card">
+<h3>1. Sulfur Burning Furnace (98%)</h3>
+<p>S + O₂ → SO₂ (Exothermic)</p>
+<p>Operating Temperature: 900 – 1100°C</p>
+<p>Pressure: ~1 atm</p>
+<p>Main purpose: generate continuous SO₂ gas stream.</p>
+</div>
+
+<div class="card">
+<h3>2. Gas Cleaning & Drying</h3>
+<p>Removes dust, moisture, impurities.</p>
+<p>Temperature after cooling: 40–80°C</p>
+</div>
+
+<div class="card">
+<h3>3. Catalytic Converter</h3>
+<p>2SO₂ + O₂ ⇌ 2SO₃</p>
+<p>Catalyst: V₂O₅</p>
+<p>Temperature: 420–450°C</p>
+</div>
+
+<div class="card">
+<h3>4. Absorption Tower</h3>
+<p>SO₃ + H₂SO₄ → H₂S₂O₇ (Oleum)</p>
+</div>
+
+<div class="card">
+<h3>5. Dilution / Hydration</h3>
+<p>H₂S₂O₇ + H₂O → 2H₂SO₄</p>
+</div>
+
+</div>
+</section>
+
+<!-- ECONOMICS -->
+<section>
+<div class="container">
+<h2>Economic Analysis</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Revenue</h3>
+<div class="big-number">Rp 660 B</div>
+</div>
+<div class="card">
+<h3>Total Production Cost</h3>
+<div class="big-number">Rp 538.8 B</div>
+</div>
+<div class="card">
+<h3>Net Profit</h3>
+<div class="big-number">Rp 94.5 B</div>
+</div>
+</div>
+
+<canvas id="bepChart"></canvas>
+
+</div>
+</section>
+
+<!-- TEAM -->
+<section>
+<div class="container">
+<h2>Project Team</h2>
+<div class="team">
+<div class="member">Aisha</div>
+<div class="member">Keysha</div>
+<div class="member">Jovita</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Amora Ventures | Industrial Chemical Engineering Project</p>
+</footer>
+
+<script>
+const ctx = document.getElementById('bepChart');
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['Revenue','Production Cost','Net Profit'],
+datasets: [{
+label: 'IDR (Billion)',
+data: [660,538.8,94.5],
+backgroundColor: ['#800000','#1e3a5f','#ff4d6d']
+}]
+}
+});
+</script>
+
+</body>
+</html>
